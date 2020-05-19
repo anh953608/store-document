@@ -1,9 +1,7 @@
 import React from "react";
 import { Tabs } from "antd";
 import { Button } from "antd";
-import CKEditor from "@ckeditor/ckeditor5-react";
-import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
-
+import CKEditor from "ckeditor4-react";
 const { TabPane } = Tabs;
 
 const WalletHome = ({ state, change, saveData }) => {
@@ -16,10 +14,10 @@ const WalletHome = ({ state, change, saveData }) => {
       >
         <p>Input your document:</p>
         <CKEditor
-          editor={ClassicEditor}
+          type="classic"
           config={{ placeholder: "Type the document here!" }}
-          onChange={(event, editor) => {
-            const data = editor.getData();
+          onChange={(event) => {
+            const data = event.editor.getData();
             change(data);
           }}
         />

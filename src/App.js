@@ -17,10 +17,9 @@ import LoadWallet from "./components/LoadWallet";
 import ConfirmTxModal from "./components/ConfirmTxModal";
 import WalletHome from "./components/WalletHome";
 import ViewData from "./components/ViewData";
-
 import { Layout, Spin, Card, Modal, Button } from "antd";
-import "./App.css";
 import { LoadingOutlined } from "@ant-design/icons";
+import "./App.css";
 
 const antIcon = <LoadingOutlined style={{ fontSize: 24 }} spin />;
 const { Header, Content } = Layout;
@@ -265,14 +264,15 @@ class App extends React.Component {
               saveData={this.saveData}
             />
           </Card>
+          {txSendArray && txSendArray.length > 0 && (
+            <strong style={{ fontSize: "large" }}>
+              Your document in Arweave blockchain:{" "}
+            </strong>
+          )}
           {txSendArray &&
             txSendArray.length > 0 &&
             txSendArray.map((item, index) => {
               return (
-                <React.Fragment>
-                  <strong style={{ fontSize: "large" }}>
-                    Your document in Arweave blockchain:{" "}
-                  </strong>
                   <Card
                     hoverable={true}
                     style={{ width: "100%", marginTop: "20px" }}
@@ -281,7 +281,6 @@ class App extends React.Component {
                   >
                     <ViewData data={item} />
                   </Card>
-                </React.Fragment>
               );
             })}
           <Modal

@@ -1,7 +1,7 @@
 import React from "react";
 import { Tabs } from "antd";
-import CKEditor from "@ckeditor/ckeditor5-react";
-import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
+import CKEditor from 'ckeditor4-react';
+
 const { TabPane } = Tabs;
 
 const ViewData = ({ data }) => {
@@ -9,10 +9,11 @@ const ViewData = ({ data }) => {
     <Tabs defaultActiveKey="1">
       <TabPane tab="Your document" key="1">
         <CKEditor
-          editor={ClassicEditor}
+          type="classic"
           disabled={true}
           config={{ placeholder: "Type the content here!", isReadOnly: true }}
           data={data.decryptString}
+          readOnly={true}
         />
       </TabPane>
     </Tabs>

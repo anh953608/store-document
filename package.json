@@ -1,13 +1,13 @@
 {
-  "name": "donate-project",
-  "version": "0.1.0",
+  "name": "save-project",
   "private": true,
+  "version": "0.1.0",
+  "homepage": "./",
   "dependencies": {
-    "@ckeditor/ckeditor5-build-classic": "^19.0.0",
-    "@ckeditor/ckeditor5-react": "^2.1.0",
     "antd": "^4.2.0",
     "arweave": "^1.7.0",
     "axios": "^0.19.2",
+    "ckeditor4-react": "^1.1.0",
     "crypto-js": "^4.0.0",
     "decimal.js": "^10.2.0",
     "jwk-to-pem": "^2.0.3",
